@@ -16,8 +16,8 @@ class VisitorFindContentTest < ActionDispatch::IntegrationTest
   end
 
 
-  test "registered user can login" do
-    click_link_or_button "Enter"
+  test "guest user can reach table of contents" do
+    click_link "Enter"
     assert page.has_content?("Table of contents")
   end
 
