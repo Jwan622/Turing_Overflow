@@ -1,0 +1,12 @@
+<div id="content">
+  <h1> <%= @topic.name %> </h1>
+
+  <ul>
+    <% @topic.contents.each do |content| %>
+      <li>
+        <%= content.content %> <br><br>
+      </li>
+    <% end %>
+  </ul>
+
+</div>
