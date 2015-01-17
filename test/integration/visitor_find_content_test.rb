@@ -17,13 +17,8 @@ class VisitorFindContentTest < ActionDispatch::IntegrationTest
 
 
   test "registered user can login" do
-    skip
-    fill_in "sesh[username]", with: "Chris"
-    fill_in "sesh[password]", with: "Lauren"
-    click_link_or_button "Login"
-    within("#banner") do
-      assert page.has_content?("Welcome, Chris")
-    end
+    click_link_or_button "Enter"
+    assert page.has_content?("Table of contents")   
   end
 
   test "unregistered user cannot login" do
