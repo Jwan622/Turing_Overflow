@@ -15,20 +15,20 @@ class VisitorFindContentTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Welcome to Turing Overflow!")
   end
 
-
   test "guest user can reach table of contents" do
     click_link "Enter"
     assert page.has_content?("Table of contents")
   end
 
-  test "unregistered user cannot login" do
-    skip
-    fill_in "sesh[username]", with: "ChrisXX"
-    fill_in "sesh[password]", with: "LaurenXX"
-    click_link_or_button "Login"
-    within("#errors") do
-      assert page.has_content?("You typed in the wrong username/password")
-    end
+  test "guest user can see list of topics" do
+    click_link "Enter"
+    assert find_link("Ruby").visible?
+  end
+
+  test "guest user can see content" do
+    click_link "Enter"
+    click_link "Ruby"
+    assert page.has_content?("built by Matz")
   end
 
   test "logged in user sees user's ideas" do
