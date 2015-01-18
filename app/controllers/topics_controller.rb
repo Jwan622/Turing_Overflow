@@ -1,7 +1,7 @@
 class TopicsController < ApplicationController
 
   def index
-    @topics = Topic.all
+    @sorted_topics = Topic.all.sort_by { |topic| topic.name }
   end
 
   def show
