@@ -1,0 +1,14 @@
+<div id="content">
+  <h1> <%= @content.name %> </h1>
+
+  <%= form_for(:contents, url: content_path) do |f| %>
+    <%= f.text_field :username %>
+    <%= f.text_field :password %>  <!-- shows dots instead of text -->
+    <%= f.submit "Submit Edits" %>
+  <% end %>
+
+</div>
+
+<div id="link">
+  <%= link_to "Return back to Programming Topics", topics_path %>
+</div>
