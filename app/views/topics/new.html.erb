@@ -1,0 +1,12 @@
+<h1>Please Contribute A Topic To The Turing Community Resource Center</h1>
+
+<%= form_for :topic, url: topics_path do |f| %>
+  <p>
+    <%= f.label :topic %>
+    <%= f.text_field :name %>
+  </p>
+  
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
