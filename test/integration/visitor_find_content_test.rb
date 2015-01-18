@@ -37,4 +37,11 @@ class VisitorFindContentTest < ActionDispatch::IntegrationTest
     click_link "Return back to Programming Topics"
     assert page.has_content?("Table of contents")
   end
+
+  test "there is an edit link on the show page" do
+    skip
+    click_link "Enter"
+    click_link "Ruby"
+    assert find_link("Edit").first.visible?
+  end
 end

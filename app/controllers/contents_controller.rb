@@ -6,6 +6,11 @@ class ContentsController < ApplicationController
   def new
   end
 
+  def edit
+    @content = Content.find(id: params[:id].to_i)
+  end
+
+
   def create
     @content = topic.contents.new(content_params)
     @content.save!
