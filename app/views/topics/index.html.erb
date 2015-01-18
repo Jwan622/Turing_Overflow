@@ -3,7 +3,7 @@
 <ul>
   <% @sorted_topics.each do |topic| %>
   <li>
-    <%= link_to topic.name, "/topics/#{topic.id}" %>
+    <%= link_to topic.name, topic_path(topic) %>
   </li>
   <% end %>
 </ul>

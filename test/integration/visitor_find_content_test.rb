@@ -15,28 +15,26 @@ class VisitorFindContentTest < ActionDispatch::IntegrationTest
     assert page.has_content?("Welcome to Turing Overflow!")
   end
 
-  test "guest user can reach table of contents" do
+  test "visitor can reach table of contents" do
     click_link "Enter"
     assert page.has_content?("Table of contents")
   end
 
-  test "guest user can see list of topics" do
+  test "visitor can see list of topics" do
     click_link "Enter"
     assert find_link("Ruby").visible?
   end
 
-  test "guest user can see content" do
+  test "visitor can see content" do
     click_link "Enter"
     click_link "Ruby"
-    assert page.has_content?("built by Matz")
+    assert page.has_content?("Ruby is hard as fuck")
   end
 
-  test "logged in user sees user's ideas" do
-    skip
-    ApplicationController.any_instance.stubs(:current_user).returns(user) #when you do a current user stub, you actually need a current_user method
-    visit user_path(user)
-    within("#banner") do
-      assert page.has_content?("Welcome, Chris")
-    end
+  test "visitor can return back to topics page from content page" do
+    click_link "Enter"
+    click_link "Ruby"
+    click_link "Return back to Programming Topics"
+    assert page.has_content?("Table of contents")
   end
 end
