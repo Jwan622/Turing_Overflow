@@ -1,7 +1,7 @@
 <h1>Table of contents</h1>
 
 <ul>
-  <% @topics.each do |topic| %>
+  <% @sorted_topics.each do |topic| %>
   <li>
     <%= link_to topic.name, "/topics/#{topic.id}" %>
   </li>
