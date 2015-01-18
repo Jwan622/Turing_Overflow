@@ -1,6 +1,8 @@
 <div id="content">
   <h1> <%= @topic.name %> </h1>
 
+<%= link_to 'Add new resource to topic', new_topic_content_path(@topic) %>
+
   <ul>
     <% @topic.contents.each do |content| %>
       <li>

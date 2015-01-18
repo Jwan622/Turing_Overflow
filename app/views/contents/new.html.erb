@@ -1,0 +1,12 @@
+<h1>Please contribute a new resource</h1>
+
+<%= form_for :content, url: topic_contents_path do |f| %>
+<p>
+  <%= f.label :resource %>
+  <%= f.text_field :content %>
+</p>
+
+<p>
+  <%= f.submit %>
+</p>
+<% end %>
