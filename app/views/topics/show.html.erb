@@ -7,10 +7,17 @@
   <ul>
     <% @topic.contents.each do |content| %>
       <li>
-        <%= link_to content.resource, "#{content.link}", data: { confirm: "Are you sure you want to leave to an external site?" } %>
-        <%= link_to "Edit", edit_topic_content_path(@topic, content), id: "content_#{content.id}", class: "btn btn-sm btn-default" %>
-        <%= link_to "Delete", topic_content_path(@topic, content), method: :delete, data: { confirm: "You sure you wanna delete this resource??" }, class: "btn btn-sm btn-default" %>
-        <br><br>
+        <div class="row">
+          <div class="col-xs-6">
+            <%= link_to content.resource, "#{content.link}", data: { confirm: "Are you sure you want to leave to an external site?" } %>
+          </div>
+          <div class="col-xs-2">
+            <%= link_to "Edit", edit_topic_content_path(@topic, content), id: "content_#{content.id}", class: "btn btn-sm btn-default" %>
+          </div>
+          <div class="col-xs-2">
+            <%= link_to "Delete", topic_content_path(@topic, content), method: :delete, data: { confirm: "You sure you wanna delete this resource??" }, class: "btn btn-sm btn-default" %>
+          </div>
+        </div>
       </li>
     <% end %>
   </ul>
