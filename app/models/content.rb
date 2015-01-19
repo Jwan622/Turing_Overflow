@@ -1,4 +1,4 @@
 class Content < ActiveRecord::Base
-  validates :content, presence: true
+  validates :resource, presence: true
   belongs_to :topic
 end
