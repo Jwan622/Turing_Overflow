@@ -14,7 +14,7 @@ class ContentTest < ActiveSupport::TestCase
   end
 
   def test_content_is_invalid
-    content.content = nil
+    content.resource = nil
     refute content.valid?
   end
 
