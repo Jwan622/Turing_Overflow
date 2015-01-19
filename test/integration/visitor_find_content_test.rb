@@ -44,4 +44,11 @@ class VisitorFindContentTest < ActionDispatch::IntegrationTest
     click_link "Ruby"
     assert find_link("Edit").first.visible?
   end
+
+  test "we can edit content" do
+    skip
+    # click_link "Enter"
+    # click_link "Ruby"
+    # fill_in...
+  end
 end
