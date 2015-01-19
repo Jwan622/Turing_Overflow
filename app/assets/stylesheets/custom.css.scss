@@ -1,4 +1,10 @@
-$btn-primary-bg: #7ba5ae;
+// $btn-primary-bg: #499965;
+// $btn-primary-bg: #6faa22;
+$btn-primary-bg: #81aa22;
+// $btn-primary-bg: #618907;
+// $btn-primary-bg: #99b8be;
+// $btn-primary-bg: #303376;
+// $btn-primary-bg: #7ba5ae;
 
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
@@ -6,11 +12,16 @@ $btn-primary-bg: #7ba5ae;
 .turing-overflow {
   font-family: 'PT Sans', sans-serif;
   color: #5c5e5e;
+  height: 50px;
 }
 .turing-overflow .dark {
   color: #444748;
   font-weight: bold;
   letter-spacing: .5px;
+}
+
+a {
+  color: #5c5e5e;
 }
 
 .col-xs-3 {
@@ -19,8 +30,16 @@ $btn-primary-bg: #7ba5ae;
 }
 
 .btn-block {
-  margin: 5px;
+  margin: 10px -38px;
   border-radius: 0px;
+}
+
+.btn-primary, .btn-default {
+  border-radius: 0px;
+}
+
+.form-control {
+  border-radius: 0;
 }
 
 img {
@@ -29,6 +48,10 @@ img {
 
 ul {
   list-style: none;
+}
+
+.topic {
+  margin-top: 15px;
 }
 
 .styled-btn {

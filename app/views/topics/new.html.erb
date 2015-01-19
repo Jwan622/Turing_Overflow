@@ -1,12 +1,19 @@
-<h1>Please Contribute A Topic To The Turing Community Resource Center</h1>
+<h4>Please contribute a topic to the Turing Community Resource Center</h4>
 
-<%= form_for :topic, url: topics_path do |f| %>
-  <p>
-    <%= f.label :topic %>
-    <%= f.text_field :name %>
-  </p>
-  
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
+<form role="form" class="form-horizontal">
+  <%= form_for :topic, url: topics_path do |f| %>
+    <div class="form-group">
+      <%= f.label :topic, class: "col-sm-1 control-label" %>
+        <div class="col-sm-9">
+          <%= f.text_field :name, class: "form-control" %>
+        </div>
+    </div>
+
+    <div class="form-group">
+      <div class="col-sm-offset-1 col-sm-10">
+        <%= f.submit class: "btn btn-default" %>
+        <%= link_to 'Cancel', topics_path, class: "btn btn-default" %>
+      </div>
+    </div>
+  <% end %>
+</form>

@@ -8,7 +8,7 @@
     <% end %>
   </ul>
 
-<%= link_to 'Add new resource to topic', new_topic_content_path(@topic) %>
+<%= link_to 'Add new resource to topic', new_topic_content_path(@topic), class: "btn btn-default"  %>
 
 
 <div id="student_links">
@@ -20,5 +20,5 @@
 
 
 <div id="link">
-  <%= link_to "Return back to Programming Topics", topics_path %>
+  <%= link_to "Return back to Programming Topics", topics_path, class: "btn btn-default"  %>
 </div>
