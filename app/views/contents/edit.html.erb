@@ -1,13 +1,17 @@
-<div id="content">
-  <h1> You are editing this content </h1>
+<h3>You are editing this content </h3>
 
-  <%= form_for(:contents, method: "patch", url: topic_content_path(@content.topic, @content)) do |f| %>
+<form role="form" class="form-horizontal">
+<%= form_for(:contents, method: "patch", url: topic_content_path(@content.topic, @content)) do |f| %>
+  <div class="form-group">
     <%= f.text_field :resource, :value => @content.resource %>
-    <%= f.submit "Submit Edits" %>
-  <% end %>
+      <div class="form-group">
+        <%= f.submit "Submit Edits" %>
+      </div>
+  </div
+<% end %>
+</form>
 
-</div>
 
 <div id="link">
-  <%= link_to "Return back to Programming Topics", topics_path %>
+  <%= link_to "Return to Programming Topics", topics_path, class: "btn btn-default" %>
 </div>
