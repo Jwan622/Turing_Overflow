@@ -39,7 +39,7 @@ class ContentsController < ApplicationController
   end
 
   def content_params
-    params.require(:contents).permit(:resource)
+    params.require(:contents).permit(:resource, :link)
   end
 
 end
