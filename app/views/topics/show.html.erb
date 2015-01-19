@@ -6,12 +6,12 @@
 <div id="content">
   <h1> <%= @topic.name %> </h1>
 
-<%= link_to 'Add new resource to topic', new_topic_content_path(@topic) %>
+<%= link_to 'Add new content to topic', new_topic_content_path(@topic) %>
 
   <ul>
     <% @topic.contents.each do |content| %>
       <li>
-        <%= content.resource %>
+        <%= link_to content.resource, "#{content.link}", data: { confirm: "Are you sure you want to leave to an external site?" } %>
         <%= link_to "Edit", edit_topic_content_path(@topic, content), id: "content_#{content.id}" %>
         <%= link_to "Delete", topic_content_path(@topic, content), method: :delete, data: { confirm: "You sure you wanna delete this resource??" }%>
         <br><br>
