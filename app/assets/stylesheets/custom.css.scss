@@ -1,3 +1,5 @@
+@import 'bootstrap-sprockets';
+@import 'bootstrap';
 
 .body-bf {
   color: green;
@@ -7,6 +9,3 @@
   text-decoration: none;
   color: red;
 }
-
-@import 'bootstrap-sprockets';
-@import 'bootstrap';

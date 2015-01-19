@@ -6,7 +6,7 @@
   <ul>
     <% @topic.contents.each do |content| %>
       <li>
-        <%= content.content %> <%= link_to "Edit", edit_content_path(content) %> <br><br>
+        <%= content.resource %> <%= link_to "Edit", edit_topic_content_path(@topic, content) %> <br><br>
       </li>
     <% end %>
   </ul>

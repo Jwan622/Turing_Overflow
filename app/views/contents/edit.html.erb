@@ -1,9 +1,8 @@
 <div id="content">
-  <h1> <%= @content.name %> </h1>
+  <h1> You are editing this content </h1>
 
-  <%= form_for(:contents, url: content_path) do |f| %>
-    <%= f.text_field :username %>
-    <%= f.text_field :password %>  <!-- shows dots instead of text -->
+  <%= form_for(:contents, method: "patch", url: topic_content_path(@content.topic, @content)) do |f| %>
+    <%= f.text_field :resource, :value => @content.resource %>
     <%= f.submit "Submit Edits" %>
   <% end %>
 
