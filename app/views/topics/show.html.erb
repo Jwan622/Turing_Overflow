@@ -6,11 +6,13 @@
   <ul>
     <% @topic.contents.each do |content| %>
       <li>
-        <%= content.resource %> <%= link_to "Edit", edit_topic_content_path(@topic, content) %> <br><br>
+        <%= content.resource %>
+        <%= link_to "Edit", edit_topic_content_path(@topic, content), id: "content_#{content.id}" %>
+        <%= link_to "Delete", topic_content_path(@topic, content), method: :delete, data: { confirm: "You sure you wanna delete this resource??" }%>
+        <br><br>
       </li>
     <% end %>
   </ul>
-
 </div>
 
 
