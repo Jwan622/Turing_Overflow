@@ -1,9 +1,13 @@
 Rails.application.routes.draw do
 
-  root 'welcomes#index'
+  root 'topics#index'
 
   resources :topics do
-    resources :contents
+    resources :contents do
+      resources :sources
+    end
   end
+
+
 
 end

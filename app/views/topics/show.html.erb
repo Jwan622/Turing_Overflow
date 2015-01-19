@@ -4,34 +4,18 @@
   <%= flash[:success] %>
 </div>
 
-
-<div id="content">
-  <h1> <%= @topic.name %> </h1>
-
-<%= link_to 'Add new resource to topic', new_topic_content_path(@topic) %>
-
   <ul>
     <% @topic.contents.each do |content| %>
       <li>
-        <%= content.resource %>
-        <%= link_to "Edit", edit_topic_content_path(@topic, content), id: "content_#{content.id}" %>
-        <%= link_to "Delete", topic_content_path(@topic, content), method: :delete, data: { confirm: "You sure you wanna delete this resource??" }%>
+        <%= link_to content.resource, "#{content.link}", data: { confirm: "Are you sure you want to leave to an external site?" } %>
+        <%= link_to "Edit", edit_topic_content_path(@topic, content), id: "content_#{content.id}", class: "btn btn-sm btn-default" %>
+        <%= link_to "Delete", topic_content_path(@topic, content), method: :delete, data: { confirm: "You sure you wanna delete this resource??" }, class: "btn btn-sm btn-default" %>
         <br><br>
       </li>
     <% end %>
   </ul>
 
 <%= link_to 'Add new resource to topic', new_topic_content_path(@topic), class: "btn btn-default"  %>
-</div>
-
-
-<div id="student_links">
-
-
-</div>
-
-
-
 
 <div id="link">
   <%= link_to "Return back to Programming Topics", topics_path, class: "btn btn-default"  %>
