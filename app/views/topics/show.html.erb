@@ -1,7 +1,4 @@
-<div id="content">
-  <h1> <%= @topic.name %> </h1>
-
-<%= link_to 'Add new resource to topic', new_topic_content_path(@topic) %>
+  <h3> <%= @topic.name %> </h3>
 
   <ul>
     <% @topic.contents.each do |content| %>
@@ -11,7 +8,7 @@
     <% end %>
   </ul>
 
-</div>
+<%= link_to 'Add new resource to topic', new_topic_content_path(@topic) %>
 
 <div id="link">
   <%= link_to "Return back to Programming Topics", topics_path %>

@@ -1,8 +1,34 @@
+$btn-primary-bg: #7ba5ae;
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
-.body-bf {
-  color: green;
+.turing-overflow {
+  font-family: 'PT Sans', sans-serif;
+  color: #5c5e5e;
+}
+.turing-overflow .dark {
+  color: #444748;
+  font-weight: bold;
+  letter-spacing: .5px;
+}
+
+.col-xs-3 {
+  position: relative;
+  left: 1px;
+}
+
+.btn-block {
+  margin: 5px;
+  border-radius: 0px;
+}
+
+img {
+  width: 70%;
+}
+
+ul {
+  list-style: none;
 }
 
 .styled-btn {

@@ -4,12 +4,21 @@
   <title>TuringOverflow</title>
   <%= stylesheet_link_tag    'application', media: 'all' %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
 
-  <div class="container">
+  <div id="main-container" class="container">
     <div class="row">
+      <div class="col-xs-3">
+        <img src="assets/stack.png" class="img">
+      </div>
+      <div class="col-xs-9">
+        <h1 class="turing-overflow">turing<span class="dark">overflow</span></h1>
+
       <%= yield %>
+
+      </div>
     </div>
   </div>
 

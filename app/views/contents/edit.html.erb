@@ -1,5 +1,5 @@
 <div id="content">
-  <h1> You are editing this content </h1>
+  <h3> You are editing this content </h3>
 
   <%= form_for(:contents, method: "patch", url: topic_content_path(@content.topic, @content)) do |f| %>
     <%= f.text_field :resource, :value => @content.resource %>
