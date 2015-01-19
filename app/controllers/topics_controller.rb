@@ -12,10 +12,12 @@ class TopicsController < ApplicationController
   end
 
   def create
-    @topic = Topic.new(params.require(:topic).permit(:name))
-
-    @topic.save
-    redirect_to @topic
+    @topic = Topic.new(topic_params)
+    if @topic.save
+      redirect_to topics_path
+    else
+      render :new, notice: "Topic could not be saved"
+    end
   end
 
   def destroy
