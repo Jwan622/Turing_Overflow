@@ -7,7 +7,8 @@ class ContentsController < ApplicationController
   end
 
   def edit
-    @content = Content.find(id: params[:id].to_i)
+    require 'pry' ; binding.pry
+    @content = Content.find_by(id: params[:id].to_i)
   end
 
 
@@ -17,6 +18,12 @@ class ContentsController < ApplicationController
     redirect_to @content.topic
   end
 
+  def update
+    @content = Content.find(params[:id])
+    @content.update_attribute(:resource, content_params[:resource])
+    redirect_to topic_path(@content.topic)
+  end
+
   private
 
   def topic
@@ -24,7 +31,7 @@ class ContentsController < ApplicationController
   end
 
   def content_params
-    params.require(:content).permit(:content)
+    params.require(:contents).permit(:resource)
   end
 
 end
