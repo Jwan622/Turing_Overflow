@@ -6,7 +6,7 @@ class ContentTest < ActiveSupport::TestCase
 
   def setup
     @topic = Topic.create(name: "Ruby")
-    @content = Content.create(content: "Ruby is a high level language", topic_id: topic.id)
+    @content = Content.create(resource: "Ruby is a high level language", topic_id: topic.id)
   end
 
   def test_content_is_valid

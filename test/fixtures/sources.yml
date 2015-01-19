@@ -1,9 +1,9 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  resource: MyText
-  topic_id: 1
+  name: MyString
+  link: MyString
 
 two:
-  resource: MyText
-  topic_id: 1
+  name: MyString
+  link: MyString

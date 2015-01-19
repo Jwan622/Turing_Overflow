@@ -1,5 +1,11 @@
 <h3>The Turing Community Resource Center</h3>
 
+<div id="deleted">
+  <%= flash[:success] %>
+</div>
+
+
+<h1>Table of contents</h1>
 
 <div class="row">
 <div class="col-xs-9">
@@ -15,3 +21,12 @@
   <%= link_to 'Contribute New Topics', new_topic_path, class: 'btn btn-default topic' %>
 </div>
 </div>
+
+<ul>
+  <% @sorted_topics.each do |topic| %>
+  <li>
+    <%= link_to topic.name, topic_path(topic) %>
+    <%= link_to "Delete", topic_path(topic), method: :delete, data: { confirm: "You sure you wanna delete this topic playa???" }%>
+  </li>
+  <% end %>
+</ul>

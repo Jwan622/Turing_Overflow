@@ -17,4 +17,16 @@ class TopicsController < ApplicationController
     @topic.save
     redirect_to @topic
   end
+
+  def destroy
+    topic.destroy
+    flash[:success] = "Topic successfully deleted. It's gone forever"
+    redirect_to topics_path
+  end
+
+  private
+
+  def topic
+    Topic.find(params[:id])
+  end
 end

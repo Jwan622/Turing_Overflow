@@ -1,14 +1,28 @@
   <h3> <%= @topic.name %> </h3>
 
+<div id="deleted">
+  <%= flash[:success] %>
+</div>
+
+
+<div id="content">
+  <h1> <%= @topic.name %> </h1>
+
+<%= link_to 'Add new resource to topic', new_topic_content_path(@topic) %>
+
   <ul>
     <% @topic.contents.each do |content| %>
       <li>
-        <%= content.resource %> <%= link_to "Edit", edit_topic_content_path(@topic, content) %> <br><br>
+        <%= content.resource %>
+        <%= link_to "Edit", edit_topic_content_path(@topic, content), id: "content_#{content.id}" %>
+        <%= link_to "Delete", topic_content_path(@topic, content), method: :delete, data: { confirm: "You sure you wanna delete this resource??" }%>
+        <br><br>
       </li>
     <% end %>
   </ul>
 
 <%= link_to 'Add new resource to topic', new_topic_content_path(@topic), class: "btn btn-default"  %>
+</div>
 
 
 <div id="student_links">
