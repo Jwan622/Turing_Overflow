@@ -7,12 +7,12 @@ class ContentsController < ApplicationController
   end
 
   def edit
-    require 'pry' ; binding.pry
-    @content = Content.find_by(id: params[:id].to_i)
+    @content = Content.find(params[:id].to_i)
   end
 
 
   def create
+    require 'pry' ; binding.pry
     @content = topic.contents.new(content_params)
     @content.save!
     redirect_to @content.topic
