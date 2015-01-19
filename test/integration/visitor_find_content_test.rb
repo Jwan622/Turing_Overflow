@@ -2,12 +2,12 @@ require 'test_helper'
 
 class VisitorFindContentTest < ActionDispatch::IntegrationTest
   include Capybara::DSL
-  attr_reader :topic
+  attr_reader :topic, :content
 
   def setup
     @topic = Topic.create(name: "Ruby")
-    @content = Content.create(content: "Ruby is hard as fuck", topic_id: topic.id)
-    @content = Content.create(content: "Ruby is was written by Matz", topic_id: topic.id)
+    @content = Content.create(resource: "Ruby is hard as fuck", topic_id: topic.id)
+    @content = Content.create(resource: "Ruby is was written by Matz", topic_id: topic.id)
     visit '/'
   end
 
@@ -39,16 +39,25 @@ class VisitorFindContentTest < ActionDispatch::IntegrationTest
   end
 
   test "there is an edit link on the show page" do
-    skip
     click_link "Enter"
     click_link "Ruby"
-    assert find_link("Edit").first.visible?
+    within("#content_#{content.id}") do
+      assert find_link("Edit")
+    end
+  end
+
+  test "there is a delete link on the show page" do
+    click_link "Enter"
+    click_link "Ruby"
+
   end
 
   test "we can edit content" do
     skip
-    # click_link "Enter"
-    # click_link "Ruby"
-    # fill_in...
+    click_link "Enter"
+    click_link "Ruby"
+    fill_in "contents[resource]", with: "CRUDZZ"
+    click_link_or_button "Submit Edits"
+    assert page.has_content?("Add new resource to topic")
   end
 end
